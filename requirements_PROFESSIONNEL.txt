@@ -1,0 +1,29 @@
+# Bibliothèques principales pour Pipeline ML Professionnel
+
+# Manipulation et visualisation des données
+pandas>=1.3.0          # chargement, exploration et manipulation des données (DataFrames)
+numpy>=1.21.0           # calculs numériques, matrices, opérations vectorielles
+matplotlib>=3.4.0        # visualisations (histogrammes, heatmaps, scatter plots, courbes ROC)
+seaborn>=0.11.0          # visualisations statistiques avancées
+
+# Machine Learning (Scikit-learn)
+scikit-learn>=1.0.0      # ensemble complet d'algorithmes ML
+
+# Jupyter pour développement interactif
+jupyter>=1.0.0            # notebooks pour développement et documentation
+notebook>=6.4.0           # interface Jupyter classique
+
+# Utilitaires pour pipeline ML
+joblib>=1.1.0             # sauvegarde/chargement de modèles et composants
+
+# Pour analyses avancées (optionnel)
+# scipy>=1.7.0              # fonctions scientifiques avancées
+# plotly>=5.0.0              # visualisations interactives
+# shap>=0.40.0              # interprétation de modèles (SHAP values)
+# lime>=0.2.0               # interprétation locale (LIME)
+
+# Pour deep learning (optionnel)
+# tensorflow>=2.6.0          # réseaux de neurones
+# torch>=1.9.0                # alternative à tensorflow
+# xgboost>=1.5.0              # gradient boosting optimisé
+# lightgbm>=3.3.0             # gradient boosting alternatif
