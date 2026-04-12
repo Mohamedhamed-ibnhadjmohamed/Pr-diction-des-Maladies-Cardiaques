@@ -7,36 +7,83 @@ Ce dossier contient les données utilisées pour le projet de prédiction des ma
 ```
 data/
 ├── README.md           # Ce fichier
-├── heart_disease.csv   # Dataset principal (à ajouter)
+├── heart_disease.csv   # Data Folder
 └── raw/               # Données brutes (optionnel)
 ```
 
-## Instructions
+## Datasets disponibles
 
-1. **Ajoutez votre dataset principal** dans ce dossier sous le nom `heart_disease.csv`
-2. Le format attendu est un fichier CSV avec les colonnes suivantes:
-   - `age`: Âge du patient
-   - `sex`: Sexe (0=femme, 1=homme)
-   - `cp`: Type de douleur thoracique (0-3)
-   - `trestbps`: Pression artérielle au repos (mm Hg)
-   - `chol`: Cholestérol sérique (mg/dl)
-   - `fbs`: Glycémie à jeun > 120 mg/dl (0=non, 1=oui)
-   - `restecg`: Résultats électrocardiographiques au repos (0-2)
-   - `thalach`: Fréquence cardiaque maximale atteinte
-   - `exang`: Angine induite par l'exercice (0=non, 1=oui)
-   - `oldpeak`: Dépression ST induite par l'exercice
-   - `slope`: Pente du segment ST à l'effort (0-2)
-   - `ca`: Nombre de vaisseaux colorés par fluoroscopie (0-3)
-   - `thal`: Thalassémie (0-3)
-   - `target`: Variable cible (0=pas de maladie, 1=maladie)
+### 1. `heart_disease_dataset.csv` - Données brutes
+- **1000 patients** avec 16 caractéristiques cliniques
+- **Variables démographiques** : Âge (25-79 ans), Genre
+- **Facteurs de risque** : Cholestérol, Pression artérielle, Fréquence cardiaque
+- **Style de vie** : Tabagisme, Alcool, Exercice, Stress
+- **Antécédents** : Familiaux, Diabète, Obésité
+- **Symptômes** : Angine d'effort, Type de douleur thoracique
+- **Cible** : Présence (1) ou absence (0) de maladie cardiaque
 
-## Sources de données possibles
+### 2. `heart_disease_dataset1.csv` - Données prétraitées
+- **Version nettoyée et encodée** pour utilisation ML directe
+- **Variables numériques standardisées**
+- **Prête pour l'entraînement** des modèles
+- **340 valeurs manquantes** dans Alcohol Intake ont été imputées
 
-- [UCI Heart Disease Dataset](https://archive.ics.uci.edu/ml/datasets/heart+disease)
-- [Kaggle Heart Disease Dataset](https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data)
+## Colonnes disponibles
 
-## Notes
+### Variables cliniques
+- `age`: Âge du patient (25-79 ans)
+- `gender`: Genre (Male/Female)
+- `chol`: Cholestérol sérique (mg/dl)
+- `bp`: Pression artérielle (mm Hg)
+- `hr`: Fréquence cardiaque au repos (bpm)
 
-- Assurez-vous que les données sont nettoyées et prêtes à l'emploi
-- Les valeurs manquantes doivent être traitées avant l'utilisation
-- Le dataset doit contenir suffisamment d'exemples pour chaque classe
+### Style de vie
+- `smoke`: Tabagisme (Never/Former/Current)
+- `alcohol`: Consommation d'alcool (NaN/Moderate/Heavy)
+- `exercise`: Exercice physique (Yes/No)
+- `stress`: Niveau de stress (Low/Medium/High)
+
+### Antécédents médicaux
+- `family_hist`: Antécédents familiaux (Yes/No)
+- `diabetes`: Diabète (Yes/No)
+- `obesity`: Obésité (Yes/No)
+
+### Symptômes
+- `sugar`: Glycémie élevée (Yes/No)
+- `angina`: Angine d'effort (Yes/No)
+- `cp`: Type de douleur thoracique (0-3)
+
+### Variable cible
+- `target`: Présence (1) ou absence (0) de maladie cardiaque
+
+## Traitement appliqué
+
+### Prétraitement effectué
+- **Encodage des variables catégorielles** : Gender, Smoking, Alcohol, etc.
+- **Imputation des valeurs manquantes** : 340 valeurs dans Alcohol Intake
+- **Standardisation** : MinMaxScaler et StandardScaler appliqués
+- **Nettoyage des noms de colonnes** : Format standardisé
+
+### Transformations spécifiques
+- Gender : Male=1, Female=0
+- Variables binaires : Yes=1, No=0
+- Smoking : Never=0, Former=1, Current=2
+- Alcohol : NaN=0, Moderate=1, Heavy=2
+
+## Utilisation
+
+Pour utiliser les données dans les notebooks :
+```python
+# Données prétraitées (recommandé)
+df = pd.read_csv('../data/heart_disease_dataset1.csv')
+
+# Données brutes (si besoin de refaire le preprocessing)
+df_raw = pd.read_csv('../data/heart_disease_dataset.csv')
+```
+
+## Notes importantes
+
+- **Dataset prétraité** prêt pour l'entraînement ML direct
+- **Distribution équilibrée** des classes dans train/test split
+- **Pas de data leakage** dans le preprocessing appliqué
+- **Reproductibilité** garantie avec les transformations documentées
