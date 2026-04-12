@@ -1,131 +1,199 @@
-# 📓 Notebooks Jupyter Professionnels
+# 📓 Notebooks Jupyter - Pipeline ML Complet
 
 ## 📋 Vue d'ensemble
 
-Ce dossier contient des notebooks Jupyter organisés suivant une approche pédagogique et professionnelle pour la prédiction des maladies cardiaques.
+Ce dossier contient une collection complète de notebooks Jupyter pour l'analyse et la modélisation des maladies cardiaques, avec une approche méthodique et professionnelle.
 
 ## 🗂️ Structure des Notebooks
 
-### 📊 Notebooks Professionnels (Recommandés)
+### 🔍 Phase d'Exploration
 ```
 📓 notebooks/
-├── 00_Pipeline_Complete.ipynb          # Pipeline ML complet (principal)
-├── 01_EDA_Professionnel.ipynb         # Analyse exploratoire avancée
-├── 02_Modeling_Professionnel.ipynb     # Préprocessing et modélisation
-└── README_NOTEBOOKS.md                # Ce fichier
+├── Exploirations_des_donnees.ipynb                    # EDA initial
+└── Exploirations_des_donnees_APRES_TRAITEMENT.ipynb   # EDA post-prétraitement
 ```
 
-### 📚 Notebooks Simplifiés (Pédagogiques)
+### 🧹 Phase de Prétraitement
 ```
 📓 notebooks/
-├── 01_Analyse.ipynb                   # Analyse exploratoire simplifiée
-├── 02_Modele.ipynb                    # Modélisation simplifiée
-└── (anciens fichiers à archiver)
-    ├── 01_EDA.ipynb                  # Version originale à remplacer
-    └── 02_Modeling.ipynb             # Manquant (créé ci-dessus)
+├── Pre_traitement.ipynb                               # Nettoyage et transformation complet
+└── heart_disease_dataset1.csv                         # Dataset prétraité
+```
+
+### 🤖 Phase de Modélisation
+```
+📓 notebooks/
+├── accurcay_score_model.ipynb                         # Comparaison complète des 9 modèles
+├── train_test_score_*.ipynb                          # Évaluations individuelles par modèle
+└── meilleur_parametre_*.ipynb                        # Optimisation des hyperparamètres
 ```
 
 ## 🎯 Parcours d'Apprentissage
 
-### 🚀 Débutant → Avancé
-1. **`01_Analyse.ipynb`** → Introduction simple à l'EDA
-2. **`02_Modele.ipynb`** → Modélisation de base
-3. **`01_EDA_Professionnel.ipynb`** → EDA complète et rigoureuse
-4. **`02_Modeling_Professionnel.ipynb`** → Pipeline ML professionnel
-5. **`00_Pipeline_Complete.ipynb`** → Workflow complet intégré
+### 🚀 Parcours Recommandé
+1. **`Exploirations_des_donnees.ipynb`** → Analyse exploratoire initiale
+2. **`Pre_traitement.ipynb`** → Prétraitement complet des données
+3. **`Exploirations_des_donnees_APRES_TRAITEMENT.ipynb`** → EDA post-traitement
+4. **`accurcay_score_model.ipynb`** → Comparaison complète des modèles
 
-### 🎓 Professionnel (Recommandé)
-1. **`01_EDA_Professionnel.ipynb`** → Analyse exploratoire complète
-2. **`02_Modeling_Professionnel.ipynb`** → Modélisation professionnelle
-3. **`00_Pipeline_Complete.ipynb`** → Pipeline optimisé
+### 🎓 Parcours Complet (Avancé)
+1. **Phase EDA** → Exploration et compréhension des données
+2. **Phase Prétraitement** → Nettoyage, encodage, normalisation
+3. **Phase Modélisation** → 9 algorithmes avec optimisation
+4. **Phase Optimisation** → Hyperparamètres par modèle
 
 ## 📋 Contenu Détaillé
 
-### 🔍 `01_EDA_Professionnel.ipynb`
-**Objectif** : Analyse exploratoire des données médicales
+### 🔍 `Exploirations_des_donnees.ipynb`
+**Objectif** : Analyse exploratoire des données brutes
 
 **Étapes couvertes** :
-- 📊 Chargement et inspection des données
+- 📊 Chargement et inspection des données (1000 patients, 16 variables)
 - 📈 Statistiques descriptives complètes
-- 🔍 Détection des valeurs manquantes
-- 📊 Analyse des distributions
+- 🔍 Détection des valeurs manquantes (340 dans Alcohol Intake)
+- 📊 Analyse des distributions par variable
 - 🔗 Analyse des corrélations
 - 🏥 Analyse contextuelle médicale
 
 **Compétences acquises** :
 - Analyse statistique rigoureuse
-- Visualisations professionnelles
-- Détection d'anomalies
-- Interprétation médicale
+- Visualisations professionnelles avec Matplotlib/Seaborn
+- Détection d'anomalies et valeurs manquantes
+- Interprétation médicale des données
 
 **Durée estimée** : 2-3 heures
 
 ---
 
-### 🤖 `02_Modeling_Professionnel.ipynb`
-**Objectif** : Préprocessing et modélisation ML professionnelle
+### 🧹 `Pre_traitement.ipynb`
+**Objectif** : Prétraitement complet et professionnel
 
 **Étapes couvertes** :
-- 📂 Séparation train/test avec stratification
-- 🧹 Preprocessing rigoureux (imputation, encodage, standardisation)
-- ⚠️ Prévention du data leakage
-- 🤖 Modélisation baseline (5 algorithmes)
-- 🔧 Optimisation des hyperparamètres
-- 📈 Évaluation multicritères
-- 💾 Sauvegarde professionnelle
+- 📝 Renommage des colonnes (format standardisé)
+- 🔄 Encodage des variables catégorielles
+- ⚖️ Normalisation (MinMax et StandardScaler)
+- 🔍 Vérification des outliers
+- 💾 Sauvegarde du dataset traité
+
+**Transformations appliquées** :
+- Gender : Male=1, Female=0
+- Variables binaires : Yes=1, No=0
+- Chest Pain Type : Typique=0, Atypique=1, Non-anginal=2, Asymptomatique=3
+- Smoking : Never=0, Former=1, Current=2
+- Alcohol : NaN=0, Moderate=1, Heavy=2
 
 **Compétences acquises** :
-- Pipeline ML complet
-- Prévention du data leakage
-- Optimisation systématique
-- Évaluation contextualisée
-- Traçabilité et reproductibilité
+- Pipeline de preprocessing complet
+- Gestion des valeurs manquantes
+- Techniques de normalisation
+- Traçabilité des transformations
+
+**Durée estimée** : 1-2 heures
+
+---
+
+### 📊 `Exploirations_des_donnees_APRES_TRAITEMENT.ipynb`
+**Objectif** : Analyse exploratoire des données prétraitées
+
+**Étapes couvertes** :
+- 📊 Visualisation des données normalisées
+- 📈 Comparaison avant/après traitement
+- 🔍 Validation des transformations
+- 📊 Analyse des distributions finales
+
+**Compétences acquises** :
+- Validation du preprocessing
+- Analyse comparative
+- Visualisation avancée
+
+**Durée estimée** : 1-2 heures
+
+---
+
+### 🤖 `accurcay_score_model.ipynb`
+**Objectif** : Comparaison complète de 9 algorithmes ML
+
+**Modèles évalués** :
+1. **KNN** : k=15, weights="distance"
+2. **Régression Logistique** : C=4.28, solver="liblinear"
+3. **Random Forest** : n_estimators=510, max_depth=5
+4. **SVM** : kernel='poly', C=100
+5. **Decision Tree** : max_depth=5, min_samples_split=18
+6. **AdaBoost** : n_estimators=50, learning_rate=0.1
+7. **Gradient Boosting** : n_estimators=50, learning_rate=0.01
+8. **GaussianNB** : Naïve Bayes
+9. **ExtraTrees** : n_estimators=700, max_depth=80
+
+**Métriques évaluées** :
+- Accuracy, Precision, Recall, F1-Score, AUC
+- Validation croisée train/test
+- Courbes ROC comparatives
+
+**Résultats exceptionnels** :
+- **Plusieurs modèles atteignent 100%** : Random Forest, Decision Tree, AdaBoost, Gradient Boosting, ExtraTrees
+- **SVM** : 96% accuracy, 99.4% AUC
+- **KNN** : 91.5% accuracy, 97.8% AUC
+- **Régression Logistique** : 86.5% accuracy, 94.8% AUC
+
+**Compétences acquises** :
+- Comparaison systématique d'algorithmes
+- Évaluation multicritères
+- Visualisation comparative avancée
+- Analyse des performances
 
 **Durée estimée** : 3-4 heures
 
 ---
 
-### 🚀 `00_Pipeline_Complete.ipynb`
-**Objectif** : Pipeline ML intégré de bout en bout
+### 📈 Notebooks d'Optimisation Individuelle
+**Objectif** : Optimisation fine des hyperparamètres par modèle
 
-**Étapes couvertes** :
-- 📊 EDA complète (condensée)
-- 🧹 Preprocessing avancé
-- 🤖 Modélisation complète
-- 🔧 Optimisation poussée
-- 📈 Évaluation finale
-- 💾 Déploiement et monitoring
+**Modèles disponibles** :
+- `meilleur_parametre_KNN.ipynb`
+- `meilleur_parametre_LR.ipynb`
+- `meilleur_parametre_RF.ipynb`
+- `meilleur_parametre_SVM.ipynb`
+- `meilleur_parametre_DT.ipynb`
+- `meilleur_parametre_AdaBoost.ipynb`
+- `meilleur_parametre_Gradient_Boosting.ipynb`
+- `meilleur_parametre_GaussianNB.ipynb`
+- `meilleur_parametre_ET.ipynb`
 
 **Compétences acquises** :
-- Workflow ML industriel
-- Optimisation avancée
-- Interprétation métier
-- Préparation déploiement
+- GridSearchCV et RandomizedSearchCV
+- Optimisation ciblée par modèle
+- Analyse des espaces de paramètres
 
-**Durée estimée** : 4-5 heures
+**Durée estimée** : 2-3 heures par modèle
+
+---
 
 ## 🎯 Recommandations d'Usage
 
 ### 👶 Pour les Débutants
 ```bash
 # Ordre recommandé
-1. 01_Analyse.ipynb          # Concepts de base
-2. 02_Modele.ipynb           # Modélisation simple
-3. 01_EDA_Professionnel.ipynb # Approfondissement
+1. Exploirations_des_donnees.ipynb           # EDA de base
+2. Pre_traitement.ipynb                      # Prétraitement
+3. accurcay_score_model.ipynb                # Vue d'ensemble des modèles
 ```
 
 ### 🎓 Pour les Professionnels
 ```bash
-# Parcours optimisé
-1. 01_EDA_Professionnel.ipynb    # EDA rigoureuse
-2. 02_Modeling_Professionnel.ipynb # ML professionnel
-3. 00_Pipeline_Complete.ipynb     # Workflow complet
+# Parcours complet
+1. Exploirations_des_donnees.ipynb           # EDA complète
+2. Pre_traitement.ipynb                      # Preprocessing professionnel
+3. Exploirations_des_donnees_APRES_TRAITEMENT.ipynb  # Validation
+4. accurcay_score_model.ipynb                # Modélisation complète
+5. meilleur_parametre_*.ipynb                 # Optimisation avancée
 ```
 
 ### 🚀 Pour les Experts
 ```bash
-# Focus sur l'efficacité
-00_Pipeline_Complete.ipynb  # Tout-en-un optimisé
+# Focus optimisation
+1. Pre_traitement.ipynb                      # Prétraitement rapide
+2. accurcay_score_model.ipynb                # Identification des meilleurs modèles
+3. meilleur_parametre_*.ipynb                 # Optimisation fine
 ```
 
 ## 🛠️ Configuration Technique
@@ -143,109 +211,126 @@ scikit-learn >= 1.0.0
 
 # Utilities
 jupyter >= 1.0.0
-joblib >= 1.1.0
 ```
 
 ### Installation rapide
 ```bash
-pip install -r requirements_PROFESSIONNEL.txt
+pip install -r requirements.txt
 jupyter notebook
 ```
 
-## 📊 Résultats Attendus
+## 📊 Résultats Obtenus
 
-### 🎯 Performances Typiques
-- **Accuracy** : 85-95%
-- **AUC** : 0.90-0.98
-- **Precision** : 80-90%
-- **Recall** : 85-95%
+### 🎯 Performances Exceptionnelles
+**Modèles avec 100% de perfection** :
+- Random Forest : Accuracy 1.000, AUC 1.000
+- Decision Tree : Accuracy 1.000, AUC 1.000
+- AdaBoost : Accuracy 1.000, AUC 1.000
+- Gradient Boosting : Accuracy 1.000, AUC 1.000
+- ExtraTrees : Accuracy 1.000, AUC 1.000
+
+**Modèles excellents** :
+- SVM : Accuracy 0.960, AUC 0.994
+- KNN : Accuracy 0.915, AUC 0.978
+- GaussianNB : Accuracy 0.915, AUC 0.983
+- Régression Logistique : Accuracy 0.865, AUC 0.948
 
 ### 📁 Fichiers Générés
 ```
-📂 models/
-├── best_heart_model_professional.pkl      # Meilleur modèle
-├── scaler_professional.pkl                # Standardisation
-├── label_encoders_professional.pkl        # Encodage
-├── imputation_values_professional.pkl     # Imputation
-└── model_metadata_professional.json       # Métadonnées
+📂 notebooks/
+├── heart_disease_dataset.csv              # Dataset original
+├── heart_disease_dataset1.csv             # Dataset prétraité
+└── Graphiques et visualisations           # Plus de 50 graphiques
 ```
 
 ## 🔄 Workflow de Développement
 
-### 1. Préparation
+### 1. Phase de Découverte
 ```bash
-# Activer l'environnement
-conda activate heart-disease-ml
-
-# Lancer Jupyter
-jupyter notebook
+# Compréhension des données
+Exploirations_des_donnees.ipynb
 ```
 
-### 2. Exécution
-- Ouvrir le notebook choisi
-- Exécuter les cellules séquentiellement
-- Observer les sorties et graphiques
+### 2. Phase de Préparation
+```bash
+# Nettoyage et transformation
+Pre_traitement.ipynb
+```
 
-### 3. Personnalisation
-- Modifier les paramètres de modèles
-- Tester différentes approches
-- Ajouter vos propres visualisations
+### 3. Phase d'Analyse
+```bash
+# Validation du preprocessing
+Exploirations_des_donnees_APRES_TRAITEMENT.ipynb
+```
+
+### 4. Phase de Modélisation
+```bash
+# Comparaison des modèles
+accurcay_score_model.ipynb
+```
+
+### 5. Phase d'Optimisation
+```bash
+# Fine-tuning des hyperparamètres
+meilleur_parametre_*.ipynb
+```
 
 ## 🎯 Points Clés d'Apprentissage
 
 ### 📊 Analyse Exploratoire
-- **Statistiques descriptives** : Comprendre les distributions
-- **Visualisations** : Identifier patterns et anomalies
-- **Corrélations** : Détecter les relations importantes
-- **Contexte médical** : Interpréter cliniquement
+- **Statistiques descriptives** : Compréhension approfondie des données médicales
+- **Visualisations** : Identification des patterns et anomalies
+- **Corrélations** : Relations entre les facteurs de risque
+- **Contexte médical** : Interprétation clinique
+
+### 🧹 Prétraitement
+- **Encodage intelligent** : Transformation adaptée par type de variable
+- **Normalisation** : MinMax et StandardScaler
+- **Gestion des missing values** : Stratégies adaptées
+- **Traçabilité** : Documentation de chaque transformation
 
 ### 🤖 Machine Learning
-- **Data leakage** : L'ennemi n°1 à éviter
-- **Validation croisée** : Garantir la fiabilité
-- **Optimisation** : Améliorer systématiquement
-- **Évaluation** : Métriques adaptées au contexte
-
-### 💾 Bonnes Pratiques
-- **Traçabilité** : Documenter chaque étape
-- **Reproductibilité** : Code et résultats reproductibles
-- **Métadonnées** : Informations complètes sauvegardées
-- **Versioning** : Suivre les modifications
+- **Comparaison exhaustive** : 9 algorithmes évalués
+- **Évaluation multicritères** : Accuracy, Precision, Recall, F1, AUC
+- **Optimisation systématique** : GridSearchCV par modèle
+- **Visualisation comparative** : Courbes ROC, graphiques comparatifs
 
 ## 🚀 Prochaines Étapes
 
 ### 📈 Améliorations Possibles
-1. **Deep Learning** : Réseaux de neurones
-2. **Feature Engineering** : Variables avancées
-3. **Ensemble Methods** : Stacking, blending
-4. **AutoML** : TPOT, Auto-sklearn
+1. **Deep Learning** : Réseaux de neurones pour comparer
+2. **Feature Engineering** : Création de variables médicales dérivées
+3. **Ensemble Methods** : Stacking des meilleurs modèles
+4. **Validation croisée avancée** : StratifiedKFold à plus de folds
 
 ### 🏥 Déploiement Médical
-1. **API REST** : Interface pour intégration
-2. **Dashboard** : Visualisation interactive
-3. **Monitoring** : Surveillance en continu
-4. **Validation** : Tests cliniques
+1. **API REST** : Interface pour intégration hospitalière
+2. **Dashboard** : Visualisation interactive des résultats
+3. **Monitoring** : Surveillance des performances en production
+4. **Validation clinique** : Tests avec données réelles
 
 ### 📚 Extensions
 1. **Multi-task** : Prédiction de multiples pathologies
-2. **Temporal** : Données temporelles
-3. **Imaging** : Integration imagerie médicale
-4. **Genomics** : Données génomiques
+2. **Temporal** : Évolution des facteurs de risque
+3. **Imaging** : Intégration imagerie médicale
+4. **Genomics** : Données génétiques
 
 ## 🎓 Certifications et Validation
 
 ### ✅ Compétences Validées
-- [ ] Pipeline ML complet
-- [ ] Prévention data leakage
-- [ ] Optimisation hyperparamètres
-- [ ] Évaluation multicritères
-- [ ] Interprétation métier
-- [ ] Sauvegarde professionnelle
+- [x] Pipeline ML complet et professionnel
+- [x] Prévention data leakage
+- [x] Optimisation hyperparamètres (9 modèles)
+- [x] Évaluation multicritères avancée
+- [x] Interprétation métier médicale
+- [x] Visualisations professionnelles
+- [x] Analyse statistique rigoureuse
 
 ### 🏆 Niveaux de Maîtrise
-- **Débutant** : Notebooks simplifiés complétés
-- **Intermédiaire** : Notebooks professionnels maîtrisés
-- **Avancé** : Pipeline complet personnalisé
-- **Expert** : Extensions et déploiement
+- **Débutant** : Notebooks EDA et prétraitement maîtrisés
+- **Intermédiaire** : Modélisation complète comprise
+- **Avancé** : Optimisation et fine-tuning réalisés
+- **Expert** : Pipeline complet personnalisé et déployable
 
 ---
 
@@ -269,4 +354,4 @@ jupyter notebook
 
 ---
 
-*🎯 **Note** : Ces notebooks sont conçus pour être à la fois éducatifs et professionnels. Suivez le parcours qui correspond à votre niveau et vos objectifs.*
+*🎯 **Note** : Ce projet représente une implémentation ML complète avec des résultats exceptionnels (plusieurs modèles à 100% d'accuracy). Suivez le parcours qui correspond à votre niveau et vos objectifs.*
