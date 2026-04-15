@@ -210,12 +210,12 @@ st.header("Informations sur les Modèles")
 
 # Performances des modèles
 performance_data = {
-    "Modèle": ["Random Forest", "AdaBoost", "Gradient Boosting", "SVM", "Decision Tree", 
-               "KNN", "GaussianNB", "Régression Logistique", "ExtraTrees"],
-    "Accuracy": [100.0, 100.0, 100.0, 96.0, 100.0, 93.5, 92.0, 88.5, 96.5],
-    "Precision": [100.0, 100.0, 100.0, 92.3, 100.0, 93.3, 95.6, 86.7, 100.0],
-    "Recall": [100.0, 100.0, 100.0, 92.3, 100.0, 89.7, 83.3, 83.3, 91.0],
-    "F1-Score": [100.0, 100.0, 100.0, 92.3, 100.0, 91.5, 89.0, 85.0, 95.3]
+    "Modèle": ["Decision Tree", "AdaBoost", "Gradient Boosting", "Random Forest", "ExtraTrees", 
+               "SVM", "KNN", "GaussianNB", "Régression Logistique"],
+    "Accuracy": [100.0, 100.0, 100.0, 99.5, 96.5, 94.0, 93.5, 92.0, 88.5],
+    "Precision": [100.0, 100.0, 100.0, 100.0, 100.0, 92.3, 93.3, 95.6, 86.7],
+    "Recall": [100.0, 100.0, 100.0, 98.7, 91.0, 92.3, 89.7, 83.3, 83.3],
+    "F1-Score": [100.0, 100.0, 100.0, 99.4, 95.3, 92.3, 91.5, 89.0, 85.0]
 }
 
 perf_df = pd.DataFrame(performance_data)
